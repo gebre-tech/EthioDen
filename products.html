@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Clothing & Shoe Store</title>
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Our Products</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="register.html" class="nav-link">Register</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="products">
+        <h2>Featured Products</h2>
+
+        <div class="filter-options">
+            <input type="text" id="search-input" placeholder="Search by name or model..." oninput="searchProducts()">
+            <select id="category-select" onchange="filterProducts()">
+                <option value="">All Categories</option>
+                <option value="clothing">Clothing</option>
+                <option value="shoes">Shoes</option>
+            </select>
+            <input type="number" id="min-price" placeholder="Min Price" oninput="filterProducts()">
+            <input type="number" id="max-price" placeholder="Max Price" oninput="filterProducts()">
+        </div>
+
+        <div class="product-container" id="product-container">
+            <!-- Products will be dynamically added here -->
+        </div>
+
+        <div id="payment-options" style="display:none;">
+            <h3>Select Payment Method</h3>
+            <select id="payment-method">
+                <option value="">Choose Payment Method</option>
+                <option value="telebirr">Telebirr</option>
+                <option value="cbe">CBE</option>
+                <option value="dashen">Dashen</option>
+                <option value="abisinya">Abisinya</option>
+            </select>
+            <button id="confirm-payment" onclick="confirmPayment()">Confirm Payment</button>
+        </div>
+
+        <div class="cart">
+            <h3>Your Shopping Cart</h3>
+            <div id="cart-items"></div>
+            <p id="total-price">Total: 0.00 ETB</p>
+        </div>
+    </section>
+
+    <!-- Modal for Product Details -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-product-name"></h2>
+            <img id="modal-product-image" src="" alt="" />
+            <p id="modal-product-price"></p>
+            <p id="modal-product-size"></p>
+            <p id="modal-product-brand"></p>
+            <button onclick="addToCart(currentProduct)">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Clothing & Shoe Store. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

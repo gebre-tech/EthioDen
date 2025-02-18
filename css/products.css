@@ -1,0 +1,215 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background for better contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background: #007bff; /* Bootstrap primary color */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffc107; /* Highlight color on hover */
+}
+
+/* Products section */
+#products {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Filter options */
+.filter-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-options input,
+.filter-options select {
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Product container */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    width: 200px; /* Fixed width for product cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    text-align: center; /* Center text */
+}
+
+.product:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%; /* Responsive image */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.product img:hover {
+    transform: scale(1.05); /* Zoom effect */
+}
+
+/* Button styles */
+button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+}
+
+/* Payment method selection styles */
+.payment-method {
+    margin: 20px 0; /* Space above and below */
+    text-align: center; /* Center the label */
+}
+
+.payment-method label {
+    font-size: 18px; /* Increase font size for better visibility */
+    font-weight: bold; /* Make the label bold */
+    display: block; /* Make label take full width */
+    margin-bottom: 10px; /* Space between label and dropdown */
+}
+
+.payment-method select {
+    padding: 10px; /* Add padding for better spacing */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Adjust font size */
+    background-color: #f9f9f9; /* Light background for contrast */
+    width: 200px; /* Set a fixed width for the dropdown */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.payment-method select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Cart styles */
+.cart {
+    margin: 20px 0;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .filter-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%; /* Full width on smaller screens */
+    }
+
+    .payment-method select {
+        width: 100%; /* Full width for smaller screens */
+    }
+}

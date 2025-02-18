@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Clothing & Shoe Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light background */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #007bff; /* Header color */
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Space between nav items */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffc107; /* Highlight color on hover */
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px; /* Max width for better layout */
+            margin: auto;
+        }
+
+        button {
+            background-color: #007bff; /* Button color */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background: white; /* White background for products */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        #add-product-form {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        #add-product-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold; /* Bold labels */
+        }
+
+        #add-product-form input {
+            width: 100%; /* Full width inputs */
+            padding: 10px;
+            margin-bottom: 10px; /* Space between inputs */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="orders.html" class="nav-link">Orders</a></li>
+                <li><a href="users.html" class="nav-link">Users</a></li>
+                <li><a href="login.html" class="nav-link">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Manage Products</h2>
+        <button onclick="showAddProductForm()">Add New Product</button>
+        
+        <div id="product-list">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+
+        <div id="add-product-form" style="display: none;">
+            <h3>Add Product</h3>
+            <form id="product-form">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" required>
+
+                <label for="product-price">Price:</label>
+                <input type="number" id="product-price" required>
+
+                <label for="product-category">Category:</label>
+                <input type="text" id="product-category" required>
+
+                <label for="product-size">Size:</label>
+                <input type="text" id="product-size" required>
+
+                <label for="product-brand">Brand:</label>
+                <input type="text" id="product-brand" required>
+
+                <label for="product-image">Image URL:</label>
+                <input type="text" id="product-image" required>
+
+                <button type="submit">Add Product</button>
+                <button type="button" onclick="hideAddProductForm()">Cancel</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Clothing & Shoe Store. All rights reserved.</p>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        function checkAuthentication() {
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+            if (!loggedInUser || loggedInUser.role !== 'admin') {
+                alert('You do not have permission to access this page.');
+                window.location.href = 'login.html'; // Redirect to login page
+            }
+        }
+
+        checkAuthentication();
+
+        let products = JSON.parse(localStorage.getItem('products')) || [];
+
+        // Function to display all products
+        function displayProducts() {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+
+            products.forEach((product, index) => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <p>Price: ${product.price.toFixed(2)} ETB</p>
+                    <p>Category: ${product.category}</p>
+                    <p>Size: ${product.size}</p>
+                    <p>Brand: ${product.brand}</p>
+                    <img src="${product.image}" alt="${product.name}" width="100">
+                    <button onclick="deleteProduct(${index})">Delete</button>
+                `;
+                productList.appendChild(productDiv);
+            });
+        }
+
+        // Add product form submission
+        document.getElementById('product-form')?.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('product-name').value;
+            const price = parseFloat(document.getElementById('product-price').value);
+            const category = document.getElementById('product-category').value;
+            const size = document.getElementById('product-size').value;
+            const brand = document.getElementById('product-brand').value;
+            const image = document.getElementById('product-image').value;
+
+            products.push({ name, price, category, size, brand, image });
+            localStorage.setItem('products', JSON.stringify(products));
+            displayProducts();
+            hideAddProductForm();
+        });
+
+        // Function to delete a product
+        function deleteProduct(index) {
+            products.splice(index, 1);
+            localStorage.setItem('products', JSON.stringify(products));
+            displayProducts();
+        }
+
+        // Show add product form
+        function showAddProductForm() {
+            document.getElementById('add-product-form').style.display = 'block';
+        }
+
+        // Hide add product form
+        function hideAddProductForm() {
+            document.getElementById('add-product-form').style.display = 'none';
+        }
+
+        // Initial display of products
+        displayProducts();
+    </script>
+</body>
+</html>
