@@ -69,28 +69,10 @@ To upload products from a local JSON file, use the "Upload Products" feature in 
 ]
 ```
 
-## Contributing
 
-Contributions are welcome! If you have suggestions for improvements or new features, please feel free to open an issue or submit a pull request.
-
-1. **Fork the repository**.
-2. **Create your feature branch**:
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-3. **Commit your changes**:
-   ```bash
-   git commit -m 'Add some AmazingFeature'
-   ```
-4. **Push to the branch**:
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-5. **Open a pull request**.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
