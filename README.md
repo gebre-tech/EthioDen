@@ -42,7 +42,7 @@ To get a local copy of the project up and running, follow these simple steps:
 - **User Registration**: New users can register to create an account.
 - **Login**: Existing users can log in to access their accounts.
 - **Product Browsing**: Users can browse through the available products.
-- **Admin Dashboard**: Admin users have access to manage products and view orders.
+- **Admin Dashboard**: Admin users have access to manage products and view orders.(admin@example.com password:admin123)
 
 ## Uploading Products
 
