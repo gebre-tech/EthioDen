@@ -88,21 +88,4 @@ For any inquiries or feedback, please reach out to the project maintainer:
 - **GitHub**: [Gebire3](https://github.com/Gebire3)
 - **phone**:0928510323
 
-```
 
-### Instructions for Adding the README
-
-1. **Create a README file**:
-   - In your project folder, create a file named `README.md`.
-
-2. **Copy the content**: 
-   - Copy the above content into the `README.md` file.
-
-3. **Commit the changes**:
-   ```bash
-   git add README.md
-   git commit -m "Add comprehensive README file"
-   git push origin main
-   ```
-
-You now have a complete README file that includes all the requested sections. If you need any further modifications, feel free to ask!
