@@ -1,41 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Clothing & Shoe Store</title>
-    <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/products.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopET - ለኢትዮጵያ ምርጥ የገበያ ቦታ</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    body { font-family: 'Inter', 'Noto Sans Ethiopic', sans-serif; }
+    .amharic { font-family: 'Noto Sans Ethiopic', sans-serif; }
+    .hero-ad { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1441986300917-64672809604a?q=80&w=1920') center/cover; }
+  </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-    <header>
-        <h1>Welcome to Our Clothing & Shoe Store</h1>
-        <nav>
-            <ul>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="register.html" class="nav-link">Register</a></li>
-                <li><a href="login.html" class="nav-link">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-700 to-blue-900 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+      <h1 class="text-2xl font-bold amharic">ሾፕኢቲ | ShopET</h1>
+      <nav class="flex flex-wrap gap-4 text-sm md:text-base">
+        <a href="index.html" class="hover:text-yellow-300 font-medium">Home</a>
+        <a href="products.html" class="hover:text-yellow-300 font-medium">Products</a>
+        <a href="about.html" class="hover:text-yellow-300 font-medium">About</a>
+        <a href="contact.html" class="hover:text-yellow-300 font-medium">Contact</a>
+        <a href="register.html" class="hover:text-yellow-300 font-medium">Register</a>
+        <a href="login.html" class="hover:text-yellow-300 font-medium">Login</a>
+        <button id="lang-toggle" class="px-3 py-1 bg-yellow-500 text-blue-900 rounded-full text-xs font-bold">AM</button>
+      </nav>
+    </div>
+  </header>
 
-    <section id="welcome">
-        <h2>Welcome!</h2>
-        <p>Explore our range of clothing and shoes to find the perfect match for your style!</p>
-    </section>
+  <!-- Hero Ad Banner (Central & Eye-Catching) -->
+  <section class="hero-ad py-20 text-center text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-6xl font-bold mb-4 amharic">በዚህ ሳምንት 50% ቅናሽ!</h2>
+      <p class="text-xl mb-6">ከልብስ እስከ ኤሌክትሮኒክስ - ሁሉም በአንድ ቦታ</p>
+      <a href="products.html" class="bg-yellow-500 text-blue-900 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-400 transition">አሁን ይግዙ</a>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Clothing & Shoe Store. All rights reserved.</p>
-        <div class="social-media">
-            <a href="#" target="_blank">Facebook</a>
-            <a href="#" target="_blank">Instagram</a>
-            <a href="#" target="_blank">Twitter</a>
-        </div>
-    </footer>
+  <!-- Featured Categories -->
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 amharic">ምድቦች</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <a href="products.html?cat=clothing" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
+          <i class="fas fa-tshirt text-4xl text-blue-700 mb-2"></i>
+          <p class="font-semibold">Clothing</p>
+        </a>
+        <a href="products.html?cat=shoes" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
+          <i class="fas fa-shoe-prints text-4xl text-blue-700 mb-2"></i>
+          <p class="font-semibold">Shoes</p>
+        </a>
+        <a href="products.html?cat=electronics" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
+          <i class="fas fa-mobile-alt text-4xl text-blue-700 mb-2"></i>
+          <p class="font-semibold">Electronics</p>
+        </a>
+        <a href="products.html?cat=home" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
+          <i class="fas fa-home text-4xl text-blue-700 mb-2"></i>
+          <p class="font-semibold">Home & Living</p>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/main.js"></script>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="mb-4">&copy; 2025 ShopET. ሁሉም መብቶች ተጠብቀዋል።</p>
+      <div class="flex justify-center gap-6 text-xl">
+        <a href="https://web.facebook.com/gebremeskel.shimels.5/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/251928510323" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/GebremeskelShimels" target="_blank"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Language Toggle
+    document.getElementById('lang-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('amharic-mode');
+      this.textContent = document.body.classList.contains('amharic-mode') ? 'EN' : 'AM';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = document.body.classList.contains('amharic-mode') ? el.dataset.am : el.dataset.en;
+      });
+    });
+  </script>
 </body>
 </html>
