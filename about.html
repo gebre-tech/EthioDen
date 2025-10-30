@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Clothing & Shoe Store</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Clothing & Shoe Store</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      background: linear-gradient(to right, #1e3a8a, #2563eb);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .social-media a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>About Us</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="register.html" class="nav-link">Register</a></li>
-                <li><a href="login.html" class="nav-link">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>About Us</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="register.html" class="nav-link">Register</a></li>
+        <li><a href="login.html" class="nav-link">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
     <section id="about">
-        <h2>Who We Are</h2>
-        <p>We are a dedicated clothing and shoe store committed to providing high-quality fashion at affordable prices. Our mission is to help you express your unique style with our curated selection of trendy and comfortable apparel.</p>
+      <h2>Who We Are</h2>
+      <p>We are a dedicated clothing and shoe store committed to providing high-quality fashion at affordable prices. Our mission is to help you express your unique style with our curated selection of trendy and comfortable apparel.</p>
     </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Clothing & Shoe Store. All rights reserved.</p>
-        <div class="social-media">
-            <a href="#" target="_blank">Facebook</a>
-            <a href="#" target="_blank">Instagram</a>
-            <a href="#" target="_blank">Twitter</a>
-        </div>
-    </footer>
+  <!-- ✅ Footer matching Home -->
+  <footer>
+    <p class="mb-4">&copy; 2025 ShopET. ሁሉም መብቶች ተጠብቀዋል።</p>
+    <div class="social-media">
+      <a href="https://web.facebook.com/gebremeskel.shimels.5/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/251928510323" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://t.me/GebremeskelShimels" target="_blank"><i class="fab fa-telegram"></i></a>
+    </div>
+  </footer>
 
 </body>
 </html>

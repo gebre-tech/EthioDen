@@ -11,9 +11,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
-    body { font-family: 'Inter', 'Noto Sans Ethiopic', sans-serif; }
-    .amharic { font-family: 'Noto Sans Ethiopic', sans-serif; }
-    .hero-ad { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1441986300917-64672809604a?q=80&w=1920') center/cover; }
+    body {
+      font-family: 'Inter', 'Noto Sans Ethiopic', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+    .amharic {
+      font-family: 'Noto Sans Ethiopic', sans-serif;
+    }
+    .hero-ad {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1441986300917-64672809604a?q=80&w=1920') center/cover;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .scrolling-banner {
+      animation: scroll-left 20s linear infinite;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -34,42 +53,51 @@
     </div>
   </header>
 
-  <!-- Hero Ad Banner (Central & Eye-Catching) -->
-  <section class="hero-ad py-20 text-center text-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-6xl font-bold mb-4 amharic">በዚህ ሳምንት 50% ቅናሽ!</h2>
-      <p class="text-xl mb-6">ከልብስ እስከ ኤሌክትሮኒክስ - ሁሉም በአንድ ቦታ</p>
-      <a href="products.html" class="bg-yellow-500 text-blue-900 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-400 transition">አሁን ይግዙ</a>
-    </div>
-  </section>
-
-  <!-- Featured Categories -->
-  <section class="py-12 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8 amharic">ምድቦች</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <a href="products.html?cat=clothing" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
-          <i class="fas fa-tshirt text-4xl text-blue-700 mb-2"></i>
-          <p class="font-semibold">Clothing</p>
-        </a>
-        <a href="products.html?cat=shoes" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
-          <i class="fas fa-shoe-prints text-4xl text-blue-700 mb-2"></i>
-          <p class="font-semibold">Shoes</p>
-        </a>
-        <a href="products.html?cat=electronics" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
-          <i class="fas fa-mobile-alt text-4xl text-blue-700 mb-2"></i>
-          <p class="font-semibold">Electronics</p>
-        </a>
-        <a href="products.html?cat=home" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
-          <i class="fas fa-home text-4xl text-blue-700 mb-2"></i>
-          <p class="font-semibold">Home & Living</p>
-        </a>
+  <main>
+    <!-- Hero Ad Banner -->
+    <section class="hero-ad py-20 text-center text-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4 amharic">በዚህ ሳምንት 50% ቅናሽ!</h2>
+        <p class="text-xl mb-6">ከልብስ እስከ ኤሌክትሮኒክስ - ሁሉም በአንድ ቦታ</p>
+        <a href="products.html" class="bg-yellow-500 text-blue-900 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-400 transition">አሁን ይግዙ</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-8">
+    <!-- Animated Ad Banner -->
+    <section class="bg-yellow-100 py-4 overflow-hidden">
+      <div class="scrolling-banner whitespace-nowrap text-center text-lg font-semibold text-blue-900">
+        🎉 ምርጥ ምርቶች  በዝቅተኛ ዋጋ! &nbsp;&nbsp;&nbsp; 🚚 ነፃ መላኪያ በአዲስ አበባ! &nbsp;&nbsp;&nbsp; 🛍️ አሁን ይግዙ እና ቅናሽ ይቀበሉ!
+      </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 amharic">ምድቦች</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <a href="products.html?cat=clothing" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
+            <i class="fas fa-tshirt text-4xl text-blue-700 mb-2"></i>
+            <p class="font-semibold">Clothing</p>
+          </a>
+          <a href="products.html?cat=shoes" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
+            <i class="fas fa-shoe-prints text-4xl text-blue-700 mb-2"></i>
+            <p class="font-semibold">Shoes</p>
+          </a>
+          <a href="products.html?cat=electronics" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
+            <i class="fas fa-mobile-alt text-4xl text-blue-700 mb-2"></i>
+            <p class="font-semibold">Electronics</p>
+          </a>
+          <a href="products.html?cat=home" class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition">
+            <i class="fas fa-home text-4xl text-blue-700 mb-2"></i>
+            <p class="font-semibold">Home & Living</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-8 mt-auto">
     <div class="container mx-auto px-4 text-center">
       <p class="mb-4">&copy; 2025 ShopET. ሁሉም መብቶች ተጠብቀዋል።</p>
       <div class="flex justify-center gap-6 text-xl">
@@ -78,7 +106,7 @@
         <a href="https://t.me/GebremeskelShimels" target="_blank"><i class="fab fa-telegram"></i></a>
       </div>
     </div>
-  </footer>
+  </footer> 
 
   <script>
     // Language Toggle
